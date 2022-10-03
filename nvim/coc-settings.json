@@ -1,0 +1,16 @@
+{
+  "codeLens.enable": true,
+  "coc.preferences.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "c",
+    "go",
+    "python",
+    "rust",
+    "markdown",
+    "javascript",
+    "typescript",
+    "json",
+    "jsonc"
+  ],
+  "java.home": "/usr/lib/jvm/java-18-openjdk"
+}
