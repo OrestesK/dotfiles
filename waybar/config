@@ -19,7 +19,10 @@
 	],
 	"modules-right": [
 		"custom/left-arrow-dark",
-		"pulseaudio",
+		"custom/audio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"network",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"memory",
@@ -32,9 +35,6 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
         "backlight",
-		//"disk",
-		//"custom/left-arrow-light",
-		//"custom/left-arrow-dark",
 		"tray"
 	],
 
@@ -72,34 +72,26 @@
 		"format": "{:%m-%d}",
 		"tooltip": false
 	},
-
-	"pulseaudio": {
-  	    "format": "{volume} {icon}",
-  	    "format-bluetooth": "{volume} {icon}",
-  	    "format-muted": "",
-  	    "format-icons": {
-  	    	"alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-  	    	"headphones": "",
-  	    	"handsfree": "",
-  	    	"headset": "",
-  	    	"phone": "",
-  	    	"portable": "",
-  	    	"car": "",
-  	    	"default": ["", ""]
-  	    },
-  	    "scroll-step": 1,
-        "on-middle-click": "pavucontrol",
-  	    "on-click": "pavucontrol"
-
+	
+	"custom/audio": {
+		"format": "{}",
+		"on-click": "pavucontrol",
+		"interval": "once",
+		"signal": 1,
+		"tooltip": false,
+		"exec": "/usr/local/bin/getVolume.sh",
 	},
+
 	"memory": {
 		"interval": 5,
-		"format": "Mem {}"
+		"format": " {}"
 	},
+
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}"
+		"format": " {usage}"
 	},
+
 	"battery": {
 		"states": {
 			"good": 95,
@@ -115,13 +107,23 @@
 			""
 		]
 	},
+
     "backlight":{
-        // "device": "acpi_video1",
         "format": "{icon} {percent}",
-        "states": [0,50],
-        "format-icons": ["", ""],
+		"format-icons": [""],
     },
+
+	"network": {
+    	"interface": "wlp0s20f3",
+    	"format": "{ifname}",
+    	"format-wifi": "{essid} ({signalStrength}%) ",
+    	"format-ethernet": "{ipaddr}/{cidr} ",
+    	"format-disconnected": "?",
+		"tooltip": false,
+    	"max-length": 50
+	},
+
 	"tray": {
-		"icon-size": 12
+		"icon-size": 11
 	}
 }

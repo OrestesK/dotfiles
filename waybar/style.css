@@ -1,5 +1,5 @@
 * {
-	font-size: 12px;
+	font-size: 11px;
 	font-family: Iosevka;
 }
 
@@ -22,7 +22,8 @@ window#waybar {
 #clock.1,
 #clock.2,
 #clock.3,
-#pulseaudio,
+#custom-audio,
+#network,
 #memory,
 #cpu,
 #battery,
@@ -48,9 +49,11 @@ window#waybar {
 	padding: 0 3px;
 }
 
-#pulseaudio {
-
+#custom-audio{
 	color: #268bd2;
+}
+#network{
+	color: #608033;
 }
 #memory {
 	color: #2aa198;
@@ -66,7 +69,8 @@ window#waybar {
 }
 
 #clock,
-#pulseaudio,
+#custom-audio,
+#network,
 #memory,
 #cpu,
 #battery,

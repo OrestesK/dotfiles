@@ -53,6 +53,8 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 nnoremap <silent> K :call ShowDocumentation()<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+nnoremap <CR> :let @/ = ""<CR><CR>
+
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeWinSize=32
 let NERDTreeWinPos="left"
