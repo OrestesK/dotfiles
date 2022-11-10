@@ -11,6 +11,5 @@
     "typescript",
     "json",
     "jsonc"
-  ],
-  "java.home": "/usr/lib/jvm/java-18-openjdk"
+  ]
 }

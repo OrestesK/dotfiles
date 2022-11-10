@@ -13,8 +13,11 @@ set $down j
 set $up k
 set $right l
 set $term foot 
+set $fterm exec foot --app-id=launcher -e
 set $menu exec foot --app-id=launcher -e sway-launcher-desktop
 
+#to make idea products work
+exec wmname LG3D 
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 #exec nm-applet
 #exec blueman-applet
@@ -64,6 +67,7 @@ output * bg #262626 solid_color
 # Read `man 5 sway-input` for more information about this section.
 
 bindsym $mod+Return exec $term
+bindsym $alt+Return exec $fterm
 
 bindsym $mod+Shift+q kill
 
