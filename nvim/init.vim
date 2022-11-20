@@ -1,4 +1,4 @@
-set nobackup
+set nobackup 
 set nowritebackup
 set clipboard=unnamedplus
 set completeopt=noinsert,menuone,noselect
@@ -58,17 +58,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nnoremap <CR> :let @/ = ""<CR><CR>
 
-
-"NerdTree Config
-"map <F2> :NERDTreeToggle<CR>
-"let NERDTreeWinSize=32
-"let NERDTreeWinPos="left"
-"let NERDTreeShowHidden=1
-"let NERDTreeAutoDeleteBuffer=1
-"let NERDTreeAutoDeleteBuffer=1
-"let NERDTreeMapUpdir='h'
-"let NERDTreeMapDowndir='l'
-
 "Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -78,30 +67,34 @@ map <C-l> <C-W>l
 "Run commands based on filetype
 map <F9> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
-exec "w"
+  exec "w"
 if &filetype == 'c'
-exec "!gcc % -o %<"
-exec "!time ./%<"
+  exec "!gcc % -o %<"
+  exec "!time ./%<"
 elseif &filetype == 'cpp'
-exec "!g++ % -o %<"
-exec "!time ./%<"
+  exec "!g++ % -o %<"
+  exec "!time ./%<"
 elseif &filetype == 'java'
-exec "!javac %"
-exec "!time java -cp %:p:h %:t:r"
-"mvn exec:java -Dexec.mainClass=com.orestesk.Flaaffy
-"mvn spring-boot:run
+  exec "!javac %"
+  exec "!time java -cp %:p:h %:t:r"
+  "mvn exec:java -Dexec.mainClass=com.orestesk.Flaaffy
+  "mvn spring-boot:run
+elseif &filetype == 'dart'
+  "call FlutterMenu()
+  exec ":CocCommand flutter.run"
+  "exec ":FlutterHotReload"
 elseif &filetype == 'sh'
-exec "!time bash %"
+  exec "!time bash %"
 elseif &filetype == 'python'
-exec "!time python2.7 %"
+  exec "!time python3 %"
 elseif &filetype == 'html'
-exec "!firefox % &"
+  exec "!firefox % &"
 elseif &filetype == 'go'
-exec "!go build %<"
-exec "!time go run %"
+  exec "!go build"
+  exec "!time go run %"
 elseif &filetype == 'mkd'
-exec "!~/.vim/markdown.pl % > %.html &"
-exec "!firefox %.html &"
+  exec "!~/.vim/markdown.pl % > %.html &"
+  exec "!firefox %.html &"
 endif
 endfunc
 
@@ -149,6 +142,11 @@ call plug#begin('~/.config/nvim')
  
  "Java Plugs
  Plug 'mikelue/vim-maven-plugin'
+
+ "
+ "Flutter/Dart Plugs
+ Plug 'dart-lang/dart-vim-plugin'
+ "Plug 'thosakwe/vim-flutter'
 
  "Appearance
  Plug 'morhetz/gruvbox'

@@ -5,6 +5,7 @@
 
 window#waybar {
 	background: #262626;
+	background-color: rgba(38,38,38,0.8); 
 	color: #fdf6e3;
 }
 

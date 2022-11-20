@@ -3,7 +3,10 @@
   "coc.preferences.noselect": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "c",
+    "cpp",
     "go",
+    "dart",
+    "java",
     "python",
     "rust",
     "markdown",
