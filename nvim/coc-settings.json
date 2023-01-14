@@ -1,18 +1,8 @@
 {
-  "codeLens.enable": true,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualText": false,
+  "diagnostic.messageTarget": "float",
+  "codeLens.enable": false,
   "coc.preferences.noselect": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "c",
-    "cpp",
-    "go",
-    "dart",
-    "java",
-    "python",
-    "rust",
-    "markdown",
-    "javascript",
-    "typescript",
-    "json",
-    "jsonc"
-  ]
+  "coc.preferences.formatOnSaveFiletypes": ["*"]
 }
