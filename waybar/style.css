@@ -1,22 +1,20 @@
 * {
-	font-size: 11px;
-	font-family: Iosevka;
+  font-size: 11px;
+  font-family: Iosevka;
 }
 
 window#waybar {
-	background: #262626;
-	background-color: rgba(38,38,38,0.8); 
-	color: #fdf6e3;
+  background-color: rgba(40, 40, 40, 0.8);
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #1a1a1a;
+  color: #1a1a1a;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+  color: #292b2e;
+  background: #1a1a1a;
 }
 
 #workspaces,
@@ -30,43 +28,43 @@ window#waybar {
 #battery,
 #backlight,
 #tray {
-	background: #1a1a1a;
+  background: #1a1a1a;
 }
 
 #workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
+  padding: 0 2px;
+  color: #fdf6e3;
 }
 #workspaces button.focused {
-	color: #268bd2;
+  color: #268bd2;
 }
 #workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
+  box-shadow: inherit;
+  text-shadow: inherit;
 }
 #workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
+  background: #1a1a1a;
+  border: #1a1a1a;
+  padding: 0 3px;
 }
 
-#custom-audio{
-	color: #268bd2;
+#custom-audio {
+  color: #268bd2;
 }
-#network{
-	color: #608033;
+#network {
+  color: #608033;
 }
 #memory {
-	color: #2aa198;
+  color: #2aa198;
 }
 #cpu {
-	color: #6c71c4;
+  color: #6c71c4;
 }
 #battery {
-	color: #859900;
+  color: #859900;
 }
 #backlight {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
 #clock,
@@ -75,6 +73,6 @@ window#waybar {
 #memory,
 #cpu,
 #battery,
-#backlight{
-	padding: 0 10px;
+#backlight {
+  padding: 0 10px;
 }

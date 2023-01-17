@@ -8,6 +8,7 @@ set hidden
 set inccommand=split
 set encoding=utf-8
 set visualbell
+set termguicolors
 
 set mouse=a
 set cursorline
@@ -31,9 +32,9 @@ set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set backspace=indent,eol,start
 set scrolloff=2
 
-set autoindent     
+set autoindent smartindent smartindent
 set showmatch              
-set showmode showcmd
+set noshowmode
 set lazyredraw
 
 set hlsearch incsearch ignorecase smartcase        
@@ -47,3 +48,5 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+autocmd vimenter * ++nested colorscheme gruvbox-material
