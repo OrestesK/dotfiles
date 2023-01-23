@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim')
+call plug#begin('~/.config/nvim/plug')
 "Util
  Plug 'editorconfig/editorconfig-vim'
  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
