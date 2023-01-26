@@ -25,8 +25,8 @@ map <F9> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
   exec "w"
 if &filetype == 'c'
-  exec "!gcc % -o %<"
-  exec "!time ./%<"
+  exec "!gcc -std=c99 -Wall -Wextra -pedantic -ggdb % -o %<"
+  exec "./%"
 elseif &filetype == 'cpp'
   exec "!g++ % -o %<"
   exec "!time ./%<"
