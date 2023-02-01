@@ -20,7 +20,7 @@ call plug#begin('~/.config/nvim/plug')
  "Plug 'mikelue/vim-maven-plugin'
  "Plug 'dart-lang/dart-vim-plugin'
  "Plug 'thosakwe/vim-flutter'
- Plug 'udalov/kotlin-vim'
+ "Plug 'udalov/kotlin-vim'
 
 "Appearance
  "Plug 'morhetz/gruvbox'

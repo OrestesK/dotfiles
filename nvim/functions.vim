@@ -27,9 +27,9 @@ func! CompileRunGcc()
 if &filetype == 'c'
   exec "!gcc -std=c99 -Wall -Wextra -pedantic -ggdb % -o %<"
   exec "./%"
-elseif &filetype == 'cpp'
-  exec "!g++ % -o %<"
-  exec "!time ./%<"
+elseif &filetype == 'rust'
+  exec "!cargo build"
+  exec "!cargo run"
 elseif &filetype == 'java'
   exec "!javac %"
   exec "!time java -cp %:p:h %:t:r"

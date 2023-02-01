@@ -33,7 +33,7 @@ exec /usr/local/bin/startupScript.sh
 exec dunst
 exec xmousepasteblock
 exec easyeffects --gapplication-service
-
+exec /usr/lib/polkit-1
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+1 waybar
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -RTMIN+1 waybar
@@ -166,5 +166,6 @@ mode "resize" {
 bar {
 	swaybar_command waybar
 }
-
-include /etc/sway/config.d/*
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
