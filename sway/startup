@@ -1,0 +1,27 @@
+exec /usr/local/bin/startupScript.sh
+exec /usr/bin/lxpolkit
+#to make idea products work
+exec wmname LG3D 
+
+exec foot --title "ScratchTerminal" 
+exec dunst
+exec xmousepasteblock
+exec easyeffects --gapplication-service
+exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
+
+exec swayidle -w \
+          timeout 600 '/usr/local/bin/lock.sh' \
+          timeout 50 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+          #resume 'swaymsg "output * dpms on"' \
+          #before-sleep '/usr/local/bin/lock.sh'
+
+#exec nm-applet
+#exec blueman-applet
+#exec pa-applet
+
+# environment variables
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+
+

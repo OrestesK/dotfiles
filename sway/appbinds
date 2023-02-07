@@ -1,0 +1,34 @@
+floating_modifier $mod normal
+
+# volume & brightness control
+bindsym {
+    XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+1 waybar
+    XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -RTMIN+1 waybar
+    XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 waybar
+    XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+1 waybar
+
+    XF86MonBrightnessUp exec light -A 10
+    XF86MonBrightnessDown exec light -U 10
+
+    Home exec playerctl play-pause 
+    End exec playerctl next
+}
+
+# logout menu
+bindsym $mod+Control+l exec wlogout -p layer-shell
+
+# full & selective screenshot
+bindsym {
+    Print exec grim - | wl-copy    
+    XF86Launch2 exec grim -g "$(slurp)" - | wl-copy
+}
+
+# pixel color picker
+bindsym $mod+Shift+p exec wl-color-picker clipboard
+
+# clipbord history
+bindsym $mod+c exec clipman pick --tool=CUSTOM --tool-args="wofi --show=dmenu --lines=10 --prompt=""" --histpath="~/.local/share/clipman.json"
+
+# toggle transparency
+bindsym $mod+a mark --toggle "α" ; [con_id=__focused__] opacity set 1 ; [con_mark="α"con_id=__focused__] opacity set $trans
+

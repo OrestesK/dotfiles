@@ -1,0 +1,7 @@
+set shell zsh
+set shellopts '-euy'
+map q :quit
+map d # leave the command name empty like this for unmapping
+map dd delete
+map dD $IFS=':'; rm -rf $fx
+map . set hidden!
