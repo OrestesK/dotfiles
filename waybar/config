@@ -83,16 +83,17 @@
 	},
 
 	"memory": {
-		"interval": 5,
+		"interval": 60,
 		"format": " {}"
 	},
 
 	"cpu": {
-		"interval": 5,
+		"interval": 60,
 		"format": " {usage}"
 	},
 
 	"battery": {
+		"interval": 60,
 		"states": {
 			"good": 95,
 			"warning": 30,
@@ -109,11 +110,14 @@
 	},
 
     "backlight":{
+		"interval": "once",
+		"signal": 2,
         "format": "{icon} {percent}",
 		"format-icons": [""],
     },
 
 	"network": {
+		"interval": 60,
     	"interface": "wlp0s20f3",
     	"format": "{ifname}",
     	"format-wifi": "{essid} ({signalStrength}%) ",

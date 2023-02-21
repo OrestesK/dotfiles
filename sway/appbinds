@@ -2,16 +2,16 @@ floating_modifier $mod normal
 
 # volume & brightness control
 bindsym {
-    XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+1 waybar
-    XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -RTMIN+1 waybar
-    XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 waybar
-    XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+1 waybar
+    --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+1 waybar
+    --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -RTMIN+1 waybar
+    --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 waybar
+    --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+1 waybar
 
-    XF86MonBrightnessUp exec light -A 10
-    XF86MonBrightnessDown exec light -U 10
+    --locked XF86MonBrightnessUp exec light -A 10 && pkill -RTMIN+2 waybar
+    --locked XF86MonBrightnessDown exec light -U 10 && pkill -RTMIN+2 waybar
 
-    Home exec playerctl play-pause 
-    End exec playerctl next
+    --locked Home exec playerctl play-pause 
+    --locked End exec playerctl next
 }
 
 # logout menu

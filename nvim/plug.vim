@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plug')
  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
  Plug 'APZelos/blamer.nvim'
  Plug 'tpope/vim-commentary'
+ Plug 'kdheepak/lazygit.nvim'
  Plug 'tpope/vim-surround'
 
 

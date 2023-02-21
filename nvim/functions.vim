@@ -12,16 +12,10 @@ function! ShowDocumentation()
   endif
 endfunction
 
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-nnoremap <silent> K :call ShowDocumentation()<CR>
+"Fzf
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
-"Run based on filetype
-map <F9> :call CompileRunGcc()<CR>
+"Filetype Compiling
 func! CompileRunGcc()
   exec "w"
 if &filetype == 'c'
@@ -51,8 +45,4 @@ elseif &filetype == 'mkd'
 endif
 endfunc
 
-"Makefile config, searches up to 1 dir up
-let &makeprg = 'if [ -f Makefile ]; then make; else make -C ..; fi'
 
-"Remove highlighted search results
-nnoremap <CR> :let @/ = ""<CR><CR>
