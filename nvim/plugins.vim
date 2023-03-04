@@ -27,3 +27,5 @@ let g:rooter_patterns = ['=src', 'Makefile']
 
 "Makefile config, searches up to 1 dir up
 let &makeprg = 'if [ -f Makefile ]; then make; else make -C ..; fi'
+
+cnoreabbrev <expr> W (getcmdtype() == ':' && getcmdline() =~ '^W$')? 'w' : 'W'

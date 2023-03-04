@@ -21,7 +21,11 @@ bindkey -s '^f' 'lfcd\n'  # lf
 
 alias n="nvim" # neovim
 alias update="sudo pacman -Syu" # udate packages
-alias fz='xdg-open "$(fzf)"' # open fzf result with default app
+alias fz='nohup xdg-open "$(fzf)" > /dev/null' # open fzf result with default app
+watch(){
+    HASH=$(echo $1 | grep -o "hash=.*" | cut -c6-)
+    peerflix -l "magnet:?xt=urn:btih:$HASH" --mpv 
+}
 
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
@@ -85,3 +89,13 @@ export NVM_DIR="$HOME/.nvm"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [ "$(tty)" = "/dev/tty1" ] ; then
+    # Your environment variables
+    export QT_QPA_PLATFORM=wayland
+    export MOZ_ENABLE_WAYLAND=1
+    export MOZ_WEBRENDER=1
+    export XDG_SESSION_TYPE=wayland
+    export XDG_CURRENT_DESKTOP=sway
+    exec sway
+fi
