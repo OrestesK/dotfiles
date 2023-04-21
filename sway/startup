@@ -1,10 +1,8 @@
 exec /usr/local/bin/startupScript.sh
 # exec /usr/bin/lxpolkit
-#to make idea products work
-exec wmname LG3D 
 
 exec foot --title "ScratchTerminal" 
-exec dunst
+exec mako
 exec xmousepasteblock
 exec easyeffects --gapplication-service
 exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
@@ -24,4 +22,6 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CU
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 
+#to make idea products work
+exec wmname LG3D 
 

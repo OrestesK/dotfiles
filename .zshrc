@@ -63,6 +63,7 @@ fi
 plugins=(
     git
     zsh-autosuggestions #zsh suggestions
+    zsh-syntax-highlighting #zsh highlighting
     sudo # Esc 2x to prepend sudo
     copyfile
     vi-mode # vim keybinds in terminal

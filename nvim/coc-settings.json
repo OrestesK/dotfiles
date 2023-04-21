@@ -1,8 +1,0 @@
-{
-  "diagnostic.checkCurrentLine": true,
-  "diagnostic.virtualText": false,
-  "diagnostic.messageTarget": "float",
-  "codeLens.enable": false,
-  "coc.preferences.noselect": false,
-  "coc.preferences.formatOnSaveFiletypes": ["*"]
-}

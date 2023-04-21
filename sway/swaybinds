@@ -16,7 +16,7 @@ bindsym {
     $mod+Up focus up
     $mod+Right focus right
 
-    $alt+Tab focus down
+    $alt+Tab focus right
 
     $mod+$left focus left
     $mod+$down focus down
