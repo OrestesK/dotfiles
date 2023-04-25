@@ -28,3 +28,7 @@ tlpui/
 yuzu/
 zathura/
 QtProject.conf
+pavucontrol.ini
+user-dirs.dirs
+zoom.conf
+zoomus.conf

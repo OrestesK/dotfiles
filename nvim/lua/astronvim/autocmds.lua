@@ -15,7 +15,7 @@ vim.on_key(function(char)
 end, namespace "auto_hlsearch")
 
 local bufferline_group = augroup("bufferline", { clear = true })
-autocmd({ "BufAdd", "BufEnter" }, {
+autocmd({ "BufAdd", "BufEnter", "TabNewEntered" }, {
   desc = "Update buffers when adding new buffers",
   group = bufferline_group,
   callback = function(args)
@@ -82,7 +82,7 @@ autocmd("BufWinEnter", {
   end,
 })
 
-autocmd("FileType", {
+autocmd("BufWinEnter", {
   desc = "Make q close help, man, quickfix, dap floats",
   group = augroup("q_close_windows", { clear = true }),
   callback = function(event)
@@ -164,7 +164,7 @@ if is_available "alpha-nvim" then
     group = group_name,
     callback = function()
       local should_skip = false
-      if vim.fn.argc() > 0 or vim.fn.line2byte "$" ~= -1 or not vim.o.modifiable then
+      if vim.fn.argc() > 0 or vim.fn.line2byte(vim.fn.line "$") ~= -1 or not vim.o.modifiable then
         should_skip = true
       else
         for _, arg in pairs(vim.v.argv) do
@@ -175,6 +175,16 @@ if is_available "alpha-nvim" then
         end
       end
       if not should_skip then require("alpha").start(true, require("alpha").default_config) end
+    end,
+  })
+end
+
+if is_available "resession.nvim" then
+  autocmd("VimLeavePre", {
+    callback = function()
+      local save = require("resession").save
+      save "Last Session"
+      save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
     end,
   })
 end

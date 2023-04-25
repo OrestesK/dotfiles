@@ -4,4 +4,4 @@ font iosevka-term-medium 11
 
 client.focused "#8EC07C" "#8EC07C" "#ffffff" "#8EC07C"
 #output * bg #282828 solid_color
-output * bg /home/orestesk/Windows-11/Storage/Pictures/Misc/SpaceShip.jpg fill
+output * bg /home/orestesk/Windows-11/Storage/Pictures/Misc/Rays.jpg fill

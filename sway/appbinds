@@ -19,8 +19,8 @@ bindsym $mod+Control+l exec wlogout -p layer-shell
 
 # full & selective screenshot
 bindsym {
-    Print exec grim - | wl-copy    
-    XF86Launch2 exec grim -g "$(slurp)" - | wl-copy
+    XF86Launch2 exec grim -g "$(slurp)" - | swappy -f -
+    Print exec grim -g "$(slurp)" - | wl-copy
 }
 
 # pixel color picker
