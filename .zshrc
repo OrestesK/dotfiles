@@ -27,6 +27,7 @@ watch(){
     peerflix -l "magnet:?xt=urn:btih:$HASH" --mpv 
 }
 
+export COLORTERM=truecolor
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
@@ -51,7 +52,6 @@ fi
 
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
-# zstyle ':omz:update' mode disabled  # disable automatic updates
 
 # DISABLE_MAGIC_FUNCTIONS="true"
 # DISABLE_LS_COLORS="true"
@@ -94,7 +94,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if [ "$(tty)" = "/dev/tty1" ] ; then
-    # Your environment variables
     export QT_QPA_PLATFORM=wayland
     export MOZ_ENABLE_WAYLAND=1
     export MOZ_WEBRENDER=1
