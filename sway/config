@@ -9,8 +9,8 @@ set {
     $up k
     $right l
     $term foot 
-    $fterm exec foot --app-id=launcher -e
-    $menu exec foot --app-id=launcher -e sway-launcher-desktop
+    $fterm exec $term --app-id=launcher -e
+    $menu exec $term --app-id=launcher -e env GLYPH_PROMPT="" sway-launcher-desktop
     $trans 0.8
 }
 include appbinds
