@@ -1,0 +1,5 @@
+-> Add this to electron apps for wayland native 
+  --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+-> Change electron to electron20 in /usr/bin/obsidian
+
