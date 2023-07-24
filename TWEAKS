@@ -3,3 +3,7 @@
 
 -> Change electron to electron20 in /usr/bin/obsidian
 
+-> Add this to python files
+  from rich.traceback import install
+  install()
+
