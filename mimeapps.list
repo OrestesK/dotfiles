@@ -66,3 +66,4 @@ audio/aac=mpv.desktop
 audio/vnd.dts=mpv.desktop
 audio/x-ape=mpv.desktop
 text/html=firefox.desktop
+x-scheme-handler/obsidian=obsidian.desktop

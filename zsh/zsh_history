@@ -1,0 +1,25 @@
+: 1693192356:0;ls
+: 1693192358:0;source .zshrc
+: 1693192360:0;ls
+: 1693192365:0;rm .zsh_history
+: 1693192367:0;ls
+: 1693192368:0;ls -a
+: 1693192819:0;ls
+: 1693192821:0;ls -a
+ls
+source .zshrc
+history-substring-search-up
+source .zshrc
+cat -u
+source .zshrc
+ls
+cd Downloads
+z foot
+ls
+n foot.ini
+lz
+clear
+z config
+lz
+z config
+n .gitignore
