@@ -1,6 +1,7 @@
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey '^[j' history-substring-search-up
+bindkey '^[k' history-substring-search-down
 
-bindkey '^I'   complete-word       # tab          | complete
-bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
+bindkey '^[h' autosuggest-clear
+bindkey '^[l' autosuggest-accept
+
 bindkey -s '^f' 'lfcd\n'  # lf 

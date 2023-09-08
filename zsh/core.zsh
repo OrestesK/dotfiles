@@ -11,6 +11,7 @@ source $ZP/exports.zsh
 source $ZP/custom.zsh
 
 setopt auto_menu
+setopt auto_cd
 
 eval "$(zoxide init zsh)"
 

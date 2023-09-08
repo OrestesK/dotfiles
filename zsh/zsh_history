@@ -1,25 +1,281 @@
-: 1693192356:0;ls
-: 1693192358:0;source .zshrc
-: 1693192360:0;ls
-: 1693192365:0;rm .zsh_history
-: 1693192367:0;ls
-: 1693192368:0;ls -a
-: 1693192819:0;ls
-: 1693192821:0;ls -a
-ls
-source .zshrc
+rm .zsh_history
 history-substring-search-up
-source .zshrc
-cat -u
-source .zshrc
-ls
 cd Downloads
-z foot
-ls
-n foot.ini
-lz
-clear
-z config
 lz
 z config
 n .gitignore
+z foot
+n foot.ini
+n install-sh
+z sms
+n autogen.sh
+n binds.zsh
+cat -u
+obsidian
+pacman -Qs electorn
+pacman -Qs electron
+sudo -e /usr/bin/obsidian
+fc
+sl
+sudo -e vencord-desktop.desktop
+n custom-discord.desktop
+sudo -e custom-discord.desktop
+exec /opt/vencord-desktop/vencord-desktop %U --enable-features=UseOzonePlatform --ozone-platform=wayland
+sudo qbittorrent
+history
+z orestesk
+z orestesk/downloads
+cd CO
+cd College
+cd RIT
+mkdir Year_1
+mv -r Semester\ 2 Year_1
+mv Semester\ 2 Year_1
+mv Semester\ 1 Year_1
+mkdir Year_2
+mkdir Semester_1
+mkdir University_Physics_II
+mkdir Communication_Across_Cultures
+mkdir Analysis_Of_Algorithms
+mkdir Intro_To_Software_Engineering
+mkdir Linear_Algebra
+z year_2
+qbittorrent r_2637000.torrent
+rm r_2637000.torrent
+zathura James\ DiSanza,\ Nancy\ Legge\ -\ Business\ and\ Professional\ Communication_\ Plans,\ Processes,\ and\ Performance\ \(2016,\ Pearson\)\ -\ libgen.li
+rm James\ DiSanza,\ Nancy\ Legge\ -\ Business\ and\ Professional\ Communication_\ Plans,\ Processes,\ and\ Performance\ \(2016,\ Pearson\)\ -\ libgen.li
+rm James\ DiSanza,\ Nancy\ Legge\ -\ Business\ and\ Professional\ Communication_\ Plans,\ Processes,\ and\ Performance\ \(2016,\ Pearson\)\ -\ libgen.li.pdf
+rm James\ DiSanza,\ Nancy\ Legge\ -\ Business\ and\ Professional\ Communication_\ Plans,\ Processes,\ and\ Performance\ \(2016,\ Pearson\)\ -\ libgen.li-2.pdf
+cd Year_2
+cd Semester_1
+up
+cd orestesk
+cd home
+z applications
+sudo -e slack-wayland.desktop
+z anal
+mkdir Homework_0
+z Mechanics
+n Primes
+sudo Primes
+nemo .
+gcc -o Primes Primes.c
+bash
+sudo ./Primes
+exit
+chmod 666 Primes.c
+g++ -o Primes Primes.c
+ls -l
+cp Primes.c ~./
+cp Primes.c ~
+z storage
+chmod 666 Windows-11
+cat /proc/mounts
+n /etc/fstab
+id
+chmod +x Primes
+chmod u+x Primes
+sudo -e /etc/fstab
+sudo mount -a
+zi
+chmod -x Primes.c
+chmod u-x Primes.c
+rm Primes.c
+z Semester_1
+cd Linear_Algebra
+cd Analysis_Of_Algorithms
+z downloads
+systemd-analyze blame
+systemctl disable reflector
+z application
+exec ./custom-discord.desktop
+sway-launcher-desktop
+z homework_0
+rm Primes
+./Primes
+n test.bash
+cd Week_1
+cd Homework_0
+croc test-cases.zip
+croc test.bash
+cd Hackatons
+cd PeerPet
+n src/server
+pacman -Qs httpie
+pacman -Ss httpie
+z software
+z semester
+cd Intro_To_Software_Engineering
+mkdir REST
+mv heroes-api.zip REST
+unzip heroes-api.zip
+z sway
+n startup
+archlinux-java list
+archlinux-java help
+archlinux-java status
+pacman -Qs java
+cd .config
+cd gtk-3.0
+n bookmarks
+mvn --version
+java -version
+javac -version
+cd r
+n src/main
+n src/main/java/com/heroes/api/heroesapi/controller
+z hero
+z intro
+cd REST
+mvn compile exec:java
+n Primes.c
+cd Week_1/Homework_0
+pacman -S pandoc-bin
+sudo pacman -S pandoc-bin
+yay -S pandoc-bin
+firefox 'Problem 1.pdf'
+n SmallestTwo.c
+bash test.bash
+n SmallestTwo.cpp
+z linear
+lf
+z algo
+cd Week_1/Homework_0/
+n Primes.cpp
+cargo build
+cargo run -- S
+z coding
+cd Projects
+cargo build && cargo run
+z royal
+cargo run
+htop
+top
+pacman -Rns top
+sudo pacman -Rns top
+pacman -Qs top
+z bi
+n lock.sh
+n getVolume.sh
+fg
+bg
+cargo help
+n src/main.rs
+n examples/quad.rs
+n src/lib.rs
+cargo clean
+lazygit
+ls -a
+z projects
+rm -r miniquad
+rm -rf miniquad
+git clone git@github.com:not-fl3/miniquad.git
+cd .cargo
+cd bin
+.
+cd .cache
+ls | grep cargo
+cd miniquad
+z quad
+z mini
+cargo run --example quad
+rustc -v
+rustc --version
+yay
+pacman -Rns tlpui
+sudo pacman -Rns tlpui
+xlsclients
+yay -S trello-bin
+pacman -S libgconf-2
+sudo pacman -S libgconf-2
+sudo pacman -S libgconf-2-4
+sudo pacman -S gconf
+yay -S gconf
+trello
+pacman -Rns trello-bin
+sudo pacman -Rns trello-bin
+sudo pacman -Rns gconf
+clear
+pacman -S trello
+sudo pacman -S trello
+yay -S trello
+pacman -Rns trello
+sudo pacman -Rns trello
+pacman -Q
+bat /var/log/pacman.log
+grep -i installed /var/log/pacman.log
+..
+cd zsh
+n aliases.zsh
+pacman
+copyfile Pokemon.jpg
+copyfile binds.zsh
+copybuffer
+copypath exports.zsh
+extract aliases.zsh
+ls -lh .
+pacman -Rns gconf
+pacman -S httpie
+sudo pacman -S httpie
+neofetch
+xterm
+git status -u .
+pacman -Rns xterm
+sudo pacman -Rns xterm
+comm -23 <(pacman -Qqett | sort) <(pacman -Qqg base-devel | sort | uniq)
+pacdisowned
+paclist
+pacupd
+pacrmorphans
+paclsorphans
+n zsh_plugins
+pacdiff
+git add
+zshrc
+ls
+z zsh
+n core.zsh
+z
+source .zshrc
+up 2
+zsh-bench
+fzf
+fd
+pushd
+popd
+dirs
+ls
+navi
+antidote home
+antidote list
+antidote update
+z algo
+ls
+..
+ls
+cd Analysis_Of_Algorithms
+ls
+cd Week_1
+ls
+mv -r Homework_0 ../
+mv Homework_0 ../
+mv 011-Intro-261.pdf ../
+ls
+..
+rm -rf Week_1
+ls
+mkdir Homework_1
+git gui citool
+z royal
+git gui citool
+fwupdmgr help
+fwupdmgr
+systemctl start fwupd-offline-update.service
+fwupdmgr refresh
+fwupdmgr update
+clear
+navi
+z zsh
+n zsh_plugins
+z config
+lazygit
