@@ -15,7 +15,7 @@ ohmyzsh/ohmyzsh path:plugins/vi-mode
 ohmyzsh/ohmyzsh path:plugins/common-aliases
 ohmyzsh/ohmyzsh path:plugins/archlinux
 
-# better native initialization
+# # better native initialization
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 belak/zsh-utils path:prompt
 belak/zsh-utils path:history

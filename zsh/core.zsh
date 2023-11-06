@@ -10,8 +10,10 @@ source $ZP/aliases.zsh
 source $ZP/exports.zsh
 source $ZP/custom.zsh
 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt auto_menu
 setopt auto_cd
+
 
 eval "$(zoxide init zsh)"
 

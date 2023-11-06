@@ -1,5 +1,8 @@
 set shell zsh
 set shellopts '-euy'
+set reverse true
+set sortby time
+set info time
 map q :quit
 map d # leave the command name empty like this for unmapping
 map dd delete

@@ -10,8 +10,9 @@ bindsym {
     --locked XF86MonBrightnessUp exec light -A 10 && pkill -RTMIN+2 waybar
     --locked XF86MonBrightnessDown exec light -U 10 && pkill -RTMIN+2 waybar
 
-    --locked Home exec playerctl play-pause 
-    --locked End exec playerctl next
+    --locked Home exec playerctl previous
+    --locked End exec playerctl play-pause
+    --locked Insert exec playerctl next
 }
 
 # logout menu

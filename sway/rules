@@ -7,7 +7,12 @@ for_window [app_id="^launcher$"] {
 }
 for_window [title=ScratchTerminal] mark "α", move to scratchpad; [title=ScratchTerminal] scratchpad show
 
+for_window [app_id="qalculate-gtk"] floating enable
+for_window [pid=546552] floating enable
+
 #for_window [title="^App.java - Labs - Code - OSS$"] floating enable
 for_window [title="Firefox — Sharing Indicator"] kill
 for_window [con_mark="α"] opacity set $trans
-for_window [class="^.*"] inhibit_idle fullscreen for_window [app_id="^.*"] inhibit_idle fullscreen
+for_window [class="^.*"] inhibit_idle fullscreen
+
+for_window [class="Shenomaly"] floating enable
