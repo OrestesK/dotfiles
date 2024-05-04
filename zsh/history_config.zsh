@@ -1,5 +1,7 @@
 export HISTFILE=$HOME/.config/zsh/zsh_history
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+export HISTSIZE=10000000
+export SAVEHIST=10000000
 
 unsetopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST

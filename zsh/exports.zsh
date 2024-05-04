@@ -10,6 +10,8 @@ export SUDO_EDITOR=nvim
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
 
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
 # android
 export PATH="$PATH:`pwd`/flutter/bin"
 export ANDROID_SDK_ROOT='/opt/android-sdk'
