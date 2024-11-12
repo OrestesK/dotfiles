@@ -16,13 +16,16 @@ bindsym {
 }
 
 # logout menu
-bindsym $mod+Control+l exec wlogout -p layer-shell
+bindsym $mod+Control+l exec wlogout
 
 # full & selective screenshot
 bindsym {
     XF86Launch2 exec grim -g "$(slurp)" - | swappy -f -
     Print exec grim -g "$(slurp)" - | wl-copy
 }
+
+# OCR scheenshot
+bindsym $mod+Shift+o exec grim -g "$(slurp)" - | tesseract - - | wl-copy
 
 # pixel color picker
 bindsym $mod+Shift+p exec wl-color-picker clipboard

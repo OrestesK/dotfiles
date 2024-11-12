@@ -3,10 +3,42 @@ set shellopts '-euy'
 set reverse true
 set sortby time
 set info time
+set sixel true
+set wrapscroll true
+
+# use enter for shell commands
+map <enter> shell
+
+# execute current file (must be executable)
+map x $$f
+map X !$f
+
+# dedicated keys for file opener actions
+map o &mimeopen $f
+map O $mimeopen --ask $f
+
+# mkdir command. See wiki if you want it to select created dir
+map a :push %mkdir<space>
+
+# define a custom 'rename' command without prompt for overwrite
+# cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+# map r push :rename<space>
+
+# define a custom 'delete' command
+# cmd delete ${{
+#    rm -rf $fx
+#      #set -f
+#     # printf "$fx\n"
+#     # printf "delete?[y/n]"
+#     #read ans
+#     #[ "$ans" = "y" ] && rm -rf $fx
+# }}
+
+map <delete> delete
+
 map q :quit
-map d # leave the command name empty like this for unmapping
-map dd delete
-map dD $IFS=':'; rm -rf $fx
+#map D delete
+map D $IFS=':'; rm -rf $fx
 map . set hidden!
 
 set previewer ~/.config/lf/previewer

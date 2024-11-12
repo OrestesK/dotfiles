@@ -13,6 +13,7 @@ exec swayidle -w \
          resume 'swaymsg "output * dpms on"' \
          before-sleep '/usr/local/bin/lock.sh'
 
+exec nohup kdeconnect-indicator &
 #exec nm-applet
 #exec blueman-applet
 #exec pa-applet
