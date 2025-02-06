@@ -1,10 +1,11 @@
+# fixes acceleration
 input type:touchpad {
     dwt disabled
     middle_emulation disabled
     accel_profile "flat"
     pointer_accel 1
 }
-# disables caps lock !yayayya!
+# disables caps lock
 input type:keyboard {
   xkb_options caps:none
 }
@@ -19,9 +20,9 @@ set {
     $down j
     $up k
     $right l
-    $term foot 
-    $fterm exec $term --app-id=launcher -e
-    $menu exec $term --app-id=launcher -e env GLYPH_PROMPT="" sway-launcher-desktop
+    $term wezterm start
+    $fterm exec $term --class launcher -e
+    $menu exec $term --class launcher -e env sway-launcher-desktop
     $trans 0.8
 }
 include appbinds

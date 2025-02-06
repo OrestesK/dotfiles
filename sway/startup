@@ -1,7 +1,7 @@
 exec /usr/local/bin/startupScript.sh
 # exec /usr/bin/lxpolkit
 
-exec foot --title "ScratchTerminal" 
+# exec foot --title "ScratchTerminal" 
 exec mako
 exec xmousepasteblock
 #exec easyeffects --gapplication-service
@@ -25,4 +25,3 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 
 #to make idea products work
 exec wmname LG3D
-
