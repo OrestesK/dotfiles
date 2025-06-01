@@ -1,6 +1,6 @@
 romkatv/powerlevel10k # prompt style
 
-peterhurford/up.zsh # go up directories
+# peterhurford/up.zsh # go up directories
 
 # command utility
 ohmyzsh/ohmyzsh path:plugins/copyfile
@@ -12,10 +12,10 @@ ohmyzsh/ohmyzsh path:plugins/sudo
 ohmyzsh/ohmyzsh path:plugins/vi-mode
 
 # aliases
-ohmyzsh/ohmyzsh path:plugins/common-aliases
-ohmyzsh/ohmyzsh path:plugins/archlinux
+# ohmyzsh/ohmyzsh path:plugins/common-aliases
+# ohmyzsh/ohmyzsh path:plugins/archlinux
 
-# # better native initialization
+# better native initialization
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 belak/zsh-utils path:prompt
 belak/zsh-utils path:history

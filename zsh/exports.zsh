@@ -21,3 +21,4 @@ export PATH=$PATH:$ANDROID_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
 
 export PATH=/home/orestesk/Sources/mxe/usr/bin:$PATH
+export PATH=/home/orestesk/miniconda/bin:$PATH

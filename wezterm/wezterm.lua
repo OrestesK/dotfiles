@@ -1,12 +1,7 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices
-
--- For example, changing the color scheme:
 config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.enable_tab_bar = false
@@ -19,5 +14,16 @@ config.cursor_thickness = "1pt"
 
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
--- and finally, return the configuration to wezterm
+config.colors = {
+	cursor_bg = "#FFF",
+	cursor_fg = "#FFF",
+	cursor_border = "#262626",
+}
+
+config.force_reverse_video_cursor = true
+
+config.enable_wayland = false
+
+config.window_close_confirmation = "NeverPrompt"
+
 return config
