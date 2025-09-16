@@ -21,7 +21,6 @@ set {
     $up k
     $right l
     $term wezterm start
-    $fterm exec $term --class launcher -e
     $menu exec $term --class launcher -e env sway-launcher-desktop
     $trans 0.8
 }
@@ -36,4 +35,3 @@ include startup
 bar {
 	swaybar_command waybar
 }
-

@@ -18,6 +18,9 @@ bindsym {
 # logout menu
 bindsym $mod+Control+l exec wlogout
 
+# screen recorder
+bindsym $mod+Shift+r exec sh -c 'wf-recorder -f /tmp/wf-recorder.mkv -g "$(slurp)" & echo $! > /tmp/wf-recorder.pid'
+bindsym $mod+Shift+s exec sh -c 'kill -INT $(cat /tmp/wf-recorder.pid); sleep 1; ffmpeg -y -i /tmp/wf-recorder.mkv -c copy ~/Recordings/output_$(date +%s).mp4; rm /tmp/wf-recorder.pid; notify-send "Recording saved" "Your screen recording has been saved successfully."'
 # full & selective screenshot
 bindsym {
     XF86Launch2 exec grim -g "$(slurp)" - | swappy -f -
@@ -31,7 +34,7 @@ bindsym $mod+Shift+o exec grim -g "$(slurp)" - | tesseract - - | wl-copy
 bindsym $mod+Shift+p exec wl-color-picker clipboard
 
 # clipbord history
-bindsym $mod+c exec clipman pick --tool=CUSTOM --tool-args="wofi --show=dmenu --lines=10 --prompt=""" --histpath="~/.local/share/clipman.json"
+bindsym $mod+c exec wezterm start -- bash -c 'clipman pick --tool=CUSTOM --tool-args="fzf" --histpath=$HOME/.local/share/clipman.json'
 
 # toggle transparency
 bindsym $mod+a mark --toggle "α" ; [con_id=__focused__] opacity set 1 ; [con_mark="α"con_id=__focused__] opacity set $trans

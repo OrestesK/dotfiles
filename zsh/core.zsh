@@ -3,6 +3,13 @@ export ZP=$HOME/.config/zsh
 source '/usr/share/zsh-antidote/antidote.zsh'
 antidote load $ZP/zsh_plugins
 
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit -C
+else
+  compinit
+fi
+
 source $ZP/p10k.zsh
 source $ZP/history_config.zsh
 source $ZP/binds.zsh

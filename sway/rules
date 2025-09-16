@@ -5,7 +5,6 @@ for_window [class="^launcher$"] {
     resize set 30 ppt 60 ppt
     border pixel 3 
 }
-for_window [title=ScratchTerminal] mark "α", move to scratchpad; [title=ScratchTerminal] scratchpad show
 
 for_window [app_id="qalculate-gtk"] floating enable
 for_window [pid=546552] floating enable
@@ -15,4 +14,14 @@ for_window [title="Firefox — Sharing Indicator"] kill
 for_window [con_mark="α"] opacity set $trans
 for_window [class="^.*"] inhibit_idle fullscreen
 
-for_window [class="Shenomaly"] floating enable
+#for_window [class="Shenomaly"] floating enable
+
+output HDMI-A-1 {
+    mode 2560x1440@144Hz
+    scale 1.2
+    pos 0 120
+}
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-1
+workspace 3 output eDP-1
+workspace 4 output eDP-1

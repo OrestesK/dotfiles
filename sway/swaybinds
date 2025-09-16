@@ -1,6 +1,5 @@
 bindsym {
     $mod+Return exec $term
-    $alt+Return exec $fterm
     $mod+d exec $menu
 }
 
