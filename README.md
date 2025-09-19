@@ -41,6 +41,8 @@
 
 Based on [cjbassi](https://github.com/Alexays/Waybar/wiki/Examples#cjbassis-configuration)
 
+![waybar](./README/waybar.png)
+
 ---
 
 ## Zsh
@@ -89,3 +91,7 @@ Based on [cjbassi](https://github.com/Alexays/Waybar/wiki/Examples#cjbassis-conf
 `easyeffects`: audio presets for PipeWire
 
 `mako`: notifications
+
+`lazygit`: git tui
+
+`zoxide`: smart cd
