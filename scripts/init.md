@@ -1,0 +1,3 @@
+- `sudo ln -s ~/.config/scripts/startupScript.sh /usr/local/bin/startupScript.sh`
+- `sudo ln -s ~/.config/scripts/setTime.sh       /usr/local/bin/setTime.sh`
+- `sudo ln -s ~/.config/scripts/setPower.sh      /usr/local/bin/setPower.sh`
