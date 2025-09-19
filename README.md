@@ -7,7 +7,7 @@
 *   **Terminal:** wezterm
 *   **Shell:** zsh
 *   **Bar:** waybar
-*   **Editor:** nvim [config][https://github.com/OrestesK/nvim]
+*   **Editor:** nvim [config](https://github.com/OrestesK/nvim)
 
 ![Sway Desktop](./README/general.png)
 
@@ -39,13 +39,14 @@
 
 ## Waybar
 
-Based on [cjbassi][https://github.com/Alexays/Waybar/wiki/Examples#cjbassis-configuration]
+Based on [cjbassi](https://github.com/Alexays/Waybar/wiki/Examples#cjbassis-configuration)
 
 ---
 
 ## Zsh
 
 `antidote` plugin manager
+
 `powerlevel10k` prompt
 
 *   **Configuration:** Separate files for `aliases`, `binds`, `core`, `custom`, `exports`, `history_config`, `p10k`, and `zsh_plugins`
@@ -63,6 +64,7 @@ Based on [cjbassi][https://github.com/Alexays/Waybar/wiki/Examples#cjbassis-conf
 ## Wezterm - Terminal Emulator
 
 `Gruvbox Material` theme
+
 `Iosevka Term Medium"` font
 
 ---
@@ -85,4 +87,5 @@ Based on [cjbassi][https://github.com/Alexays/Waybar/wiki/Examples#cjbassis-conf
 ## Other programs
 
 `easyeffects`: audio presets for PipeWire
+
 `mako`: notifications
