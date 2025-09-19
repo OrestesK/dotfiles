@@ -1,3 +1,5 @@
+// -*- mode: json -*-
+
 {
 	"layer": "top",
 	"position": "top",
@@ -19,10 +21,13 @@
 	],
 	"modules-right": [
 		"custom/left-arrow-dark",
-		"custom/audio",
+		"pulseaudio",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"network",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"memory",
@@ -31,7 +36,7 @@
 		"cpu",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"battery",
+		"disk",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
         "backlight",
@@ -73,29 +78,37 @@
 		"tooltip": false
 	},
 	
-	"custom/audio": {
-		"format": "{}",
-		"on-click": "pavucontrol",
-		"interval": "once",
-		"signal": 1,
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "  MUTED",
+		//"format-source": " {volume}%",           // microphone (input) format when active
+		//"format-source-muted": "",               // mic muted icon
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",  // very low / almost muted
+				"",  // low
+				""   // medium/high
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pavucontrol"
+	},
+	"network": {
+		"interval": 60,
+    	"interface": "wlp0s20f3",
+    	"format": "{ifname}",
+    	"format-wifi": "{essid} ({signalStrength}%) ",
+    	"format-ethernet": "{ipaddr}/{cidr} ",
+    	"format-disconnected": "?",
 		"tooltip": false,
-		"exec": "/usr/local/bin/getVolume.sh",
+    	"max-length": 50
 	},
-
-	"memory": {
-		"interval": 60,
-		"format": " {}"
-	},
-
-	"cpu": {
-		"interval": 60,
-		"format": " {usage}"
-	},
-
 	"battery": {
-		"interval": 60,
+		"interval": 5,
 		"states": {
-			"good": 95,
+			"good": 85,
 			"warning": 30,
 			"critical": 15
 		},
@@ -108,24 +121,31 @@
 			""
 		]
 	},
-
+	"memory": {
+		"interval": 5,
+		"format": " {}"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": " {usage}"
+	},
+	"disk": {
+		"interval": 5,
+		"format": " {percentage_used:2}%",
+		"path": "/"
+	},
     "backlight":{
 		"interval": "once",
 		"signal": 2,
         "format": "{icon} {percent}",
-		"format-icons": [""],
+		"format-icons": [
+			"",  // empty / very dim
+			"",  // low
+			"",  // medium
+			"",  // high
+			""   // full brightness
+		]
     },
-
-	"network": {
-		"interval": 60,
-    	"interface": "wlp0s20f3",
-    	"format": "{ifname}",
-    	"format-wifi": "{essid} ({signalStrength}%) ",
-    	"format-ethernet": "{ipaddr}/{cidr} ",
-    	"format-disconnected": "?",
-		"tooltip": false,
-    	"max-length": 50
-	},
 
 	"tray": {
 		"icon-size": 11
