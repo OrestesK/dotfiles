@@ -11,6 +11,8 @@ Some tricks to make things work
 Change electron to electron20 in /usr/bin/obsidian
 
 ## Fix: Windows partition read only after using windows
+```
 sudo rm -rf \$Recycle.Bin
 sudo ntfsfix /dev/nvme0n1p3
+```
 
