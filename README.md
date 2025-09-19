@@ -94,4 +94,13 @@ Based on [cjbassi](https://github.com/Alexays/Waybar/wiki/Examples#cjbassis-conf
 
 `lazygit`: git tui
 
+`git-spice`: git pr stacking
+
 `zoxide`: smart cd
+
+`croc`: file sharing
+
+`obsidian`: note taking
+
+`qalculate`: calculator
+
