@@ -2,6 +2,7 @@
 *
 
 # But
+!.gitignore
 !easyeffects/
 !lf/
 !mako/
@@ -11,9 +12,8 @@
 !waybar/
 !wezterm/
 !zsh/
-!.gitignore
 !README/
-!README.md
 !scripts/
 !scripts/**
-!tricks
+!tweaks.md
+!README.md
