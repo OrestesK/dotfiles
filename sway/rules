@@ -7,9 +7,7 @@ for_window [class="^launcher$"] {
 }
 
 for_window [app_id="qalculate-gtk"] floating enable
-for_window [pid=546552] floating enable
 
-#for_window [title="^App.java - Labs - Code - OSS$"] floating enable
 for_window [title="Firefox — Sharing Indicator"] kill
 for_window [con_mark="α"] opacity set $trans
 for_window [class="^.*"] inhibit_idle fullscreen

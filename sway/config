@@ -21,7 +21,7 @@ set {
     $up k
     $right l
     $term wezterm start
-    $menu exec $term --class launcher -e env sway-launcher-desktop
+    $menu $term --class launcher -e env sway-launcher-desktop
     $trans 0.8
 }
 include appbinds

@@ -1,8 +1,9 @@
+# set time & low power mode
 exec /usr/local/bin/startupScript.sh
 
 exec mako
 exec xmousepasteblock
-exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
+exec wl-paste --watch cliphist store
 
 exec swayidle -w \
          timeout 600 '/usr/local/bin/lock.sh' \
@@ -17,5 +18,5 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CU
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 
-#to make idea products work
-exec wmname LG3D
+# to make idea products work
+exec wmname LG3D # TODO: fix
