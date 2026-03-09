@@ -92,6 +92,8 @@ Based on [cjbassi](https://github.com/Alexays/Waybar/wiki/Examples#cjbassis-conf
 
 `mako`: notifications
 
+`wl-mirror`: mirror screen sharing
+
 `lazygit`: git tui
 
 `git-spice`: git pr stacking

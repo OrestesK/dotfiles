@@ -7,4 +7,4 @@ client.focused "#8EC07C" "#8EC07C" "#ffffff" "#8EC07C"
 
 # background
 # output * bg #282828 solid_color
-output * bg /home/orestesk/Windows-11/Storage/Pictures/Misc/Destruction.jpg fill
+output * bg /home/orestesk/Windows-11/Storage/Misc/Backgrounds/Destruction.jpg fill
