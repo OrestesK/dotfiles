@@ -1,0 +1,49 @@
+#!/bin/bash
+# Screen recorder toggle — Mod+Shift+R to start/stop
+
+PID_FILE="/tmp/wf-recorder.pid"
+RECORDING="/tmp/wf-recorder.mkv"
+OUT_DIR="$HOME/Recordings"
+
+start() {
+    # Clean up stale pid file if process is dead
+    if [[ -f "$PID_FILE" ]] && ! kill -0 "$(cat "$PID_FILE")" 2>/dev/null; then
+        rm "$PID_FILE"
+    fi
+
+    if [[ -f "$PID_FILE" ]]; then
+        notify-send "Already recording" "Press again to stop"
+        exit 1
+    fi
+
+    region=$(slurp) || exit 1
+    mkdir -p "$OUT_DIR"
+    wf-recorder -f "$RECORDING" -g "$region" &
+    echo $! > "$PID_FILE"
+    notify-send -t 0 "Recording" "Press again to stop" -p > /tmp/wf-recorder.notify
+}
+
+stop() {
+    if [[ ! -f "$PID_FILE" ]]; then
+        notify-send "Not recording"
+        exit 1
+    fi
+
+    kill -INT "$(cat "$PID_FILE")"
+    sleep 1
+
+    out="$OUT_DIR/output_$(date +%s).mp4"
+    ffmpeg -y -i "$RECORDING" -c copy "$out" 2>/dev/null
+    rm -f "$PID_FILE" "$RECORDING"
+
+    echo -n "file://$out" | wl-copy -t text/uri-list
+    makoctl dismiss -n "$(cat /tmp/wf-recorder.notify)" 2>/dev/null
+    rm -f /tmp/wf-recorder.notify
+    notify-send "Recording saved" "Saved and copied to clipboard."
+}
+
+if [[ -f "$PID_FILE" ]]; then
+    stop
+else
+    start
+fi

@@ -1,0 +1,50 @@
+#!/bin/sh
+cap=$(cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || echo 0)
+status=$(cat /sys/class/power_supply/BAT0/status 2>/dev/null || echo Unknown)
+profile=$(cat /sys/firmware/acpi/platform_profile 2>/dev/null)
+
+if [ "$cap" -ge 80 ]; then icon=$(printf '\xef\x89\x80')
+elif [ "$cap" -ge 60 ]; then icon=$(printf '\xef\x89\x81')
+elif [ "$cap" -ge 40 ]; then icon=$(printf '\xef\x89\x82')
+elif [ "$cap" -ge 20 ]; then icon=$(printf '\xef\x89\x83')
+else icon=$(printf '\xef\x89\x84')
+fi
+
+case "$profile" in
+    low-power)   pf="L" ;;
+    balanced)    pf="M" ;;
+    performance) pf="H" ;;
+    *)           pf="?" ;;
+esac
+
+if [ "$status" = "Charging" ]; then
+    icon=$(printf '\xef\x83\xa7')
+fi
+
+class="good"
+[ "$cap" -le 30 ] && class="warning"
+[ "$cap" -le 15 ] && class="critical"
+
+power=$(cat /sys/class/power_supply/BAT0/power_now 2>/dev/null || echo 0)
+energy_now=$(cat /sys/class/power_supply/BAT0/energy_now 2>/dev/null || echo 0)
+energy_full=$(cat /sys/class/power_supply/BAT0/energy_full 2>/dev/null || echo 0)
+
+if [ "$power" -gt 0 ]; then
+    if [ "$status" = "Charging" ]; then
+        mins=$(( (energy_full - energy_now) * 60 / power ))
+    else
+        mins=$(( energy_now * 60 / power ))
+    fi
+    hours=$((mins / 60))
+    mins=$((mins % 60))
+    timestr=$(printf '%dh %02dm' "$hours" "$mins")
+    if [ "$status" = "Charging" ]; then
+        tip=$(printf '%s to full' "$timestr")
+    else
+        tip=$(printf '%s remaining' "$timestr")
+    fi
+else
+    tip="$status"
+fi
+
+printf '{"text": "%s  %s [%s]", "tooltip": "%s", "class": "%s"}\n' "$icon" "$cap" "$pf" "$tip" "$class"

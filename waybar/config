@@ -27,13 +27,13 @@
 		"network",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"memory",
+		"custom/battery-profile",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"disk",
@@ -105,29 +105,19 @@
 		"tooltip": false,
     	"max-length": 50
 	},
-	"battery": {
+	"custom/battery-profile": {
+		"exec": "~/.local/bin/waybar-battery-profile",
+		"return-type": "json",
 		"interval": 5,
-		"states": {
-			"good": 85,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon} {capacity}",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
-	},
-	"memory": {
-		"interval": 5,
-		"format": " {}"
+		"signal": 1
 	},
 	"cpu": {
 		"interval": 5,
-		"format": " {usage}"
+		"format": " {usage}"
+	},
+	"memory": {
+		"interval": 5,
+		"format": " {}"
 	},
 	"disk": {
 		"interval": 5,
@@ -139,12 +129,12 @@
 		"signal": 2,
         "format": "{icon} {percent}",
 		"format-icons": [
-			"",  // empty / very dim
-			"",  // low
-			"",  // medium
-			"",  // high
-			""   // full brightness
-		]
+			"󰃞",  // covered
+			"󰃟",  // low
+			"󰃝",  // medium
+			"󰃠"   // full brightness
+		],
+		"tooltip": false
     },
 
 	"tray": {

@@ -5,9 +5,14 @@ input type:touchpad {
     accel_profile "flat"
     pointer_accel 1
 }
+input type:pointer {
+    scroll_factor 2
+}
 # disables caps lock
 input type:keyboard {
   xkb_options caps:none
+  repeat_delay 250
+  repeat_rate 40
 }
 
 include rules
@@ -20,8 +25,8 @@ set {
     $down j
     $up k
     $right l
-    $term wezterm start
-    $menu $term --class launcher -e env sway-launcher-desktop
+    $term foot
+    $menu foot -a launcher -e env sway-launcher-desktop
     $trans 0.8
 }
 include appbinds
@@ -29,8 +34,6 @@ include appbinds
 include startup
 
 include swaybinds
-
-include startup
 
 bar {
 	swaybar_command waybar

@@ -1,0 +1,31 @@
+#!/bin/bash
+# Watch for Fn+L/M/H platform profile changes and sync TLP + waybar
+# Runs as a user service, monitors sysfs for profile changes
+
+SAVE_FILE="/tmp/thinkpad-profile-choice"
+PROFILE_PATH="/sys/firmware/acpi/platform_profile"
+
+# Map platform profile to tlp command
+sync_tlp() {
+    case "$1" in
+        low-power)   sudo tlp power-saver >/dev/null 2>&1 ;;
+        balanced)    sudo tlp balanced    >/dev/null 2>&1 ;;
+        performance) sudo tlp performance >/dev/null 2>&1 ;;
+    esac
+}
+
+# Save initial state
+cat "$PROFILE_PATH" > "$SAVE_FILE"
+
+# Watch for changes using inotifywait
+while read -r; do
+    new=$(cat "$PROFILE_PATH")
+    saved=$(cat "$SAVE_FILE" 2>/dev/null)
+
+    # Only act if profile actually changed from what we saved
+    if [[ "$new" != "$saved" ]]; then
+        echo "$new" > "$SAVE_FILE"
+        sync_tlp "$new"
+        pkill -RTMIN+1 waybar
+    fi
+done < <(inotifywait -m -e modify "$PROFILE_PATH" 2>/dev/null)

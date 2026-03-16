@@ -7,8 +7,8 @@ bindsym {
     --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 waybar
     --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+1 waybar
 
-    --locked XF86MonBrightnessUp exec light -A 10 && pkill -RTMIN+2 waybar
-    --locked XF86MonBrightnessDown exec light -U 10 && pkill -RTMIN+2 waybar
+    --locked XF86MonBrightnessUp exec brightnessctl set +10% && pkill -RTMIN+2 waybar
+    --locked XF86MonBrightnessDown exec brightnessctl set 10%- && pkill -RTMIN+2 waybar
 
     --locked Home exec playerctl previous
     --locked End exec playerctl play-pause
@@ -22,19 +22,27 @@ bindsym $mod+a mark --toggle "α" ; [con_id=__focused__] opacity set 1 ; [con_ma
 bindsym $mod+Control+l exec wlogout
 
 # screen recorder
-bindsym $mod+Shift+r exec sh -c 'wf-recorder -f /tmp/wf-recorder.mkv -g "$(slurp)" & echo $! > /tmp/wf-recorder.pid'
-bindsym $mod+Shift+s exec sh -c 'kill -INT $(cat /tmp/wf-recorder.pid); sleep 1; ffmpeg -y -i /tmp/wf-recorder.mkv -c copy ~/Recordings/output_$(date +%s).mp4; rm /tmp/wf-recorder.pid; notify-send "Recording saved" "Your screen recording has been saved successfully."'
+bindsym $mod+Shift+r exec screen-record
 
 # screenshot
 bindsym {
-    Print exec grim -g "$(slurp)" - | wl-copy
+    XF86SelectiveScreenshot exec grim -g "$(slurp)" - | wl-copy
 }
+bindsym {
+    XF86Assistant exec grim -g "$(slurp)" - | wl-copy
+}
+
+ # speech to text
+bindsym $mod+z exec hyprvoice toggle
 
 # OCR scheenshot
 bindsym $mod+Shift+o exec grim -g "$(slurp)" - | tesseract - - | wl-copy
 
 # pixel color picker
 bindsym $mod+Shift+p exec wl-color-picker clipboard
+
+# bluetooth
+bindsym $mod+b exec foot -a launcher -e bash -c 'choice=$(printf "Bluetooth\nWi-Fi" | fzf --layout=reverse); case "$choice" in Bluetooth) bluetuith ;; Wi-Fi) nmtui ;; esac'
 
 # clipbord history
 bindsym $mod+c exec $term --class launcher -- bash -c 'cliphist list | fzf --no-sort | cliphist decode | wl-copy'

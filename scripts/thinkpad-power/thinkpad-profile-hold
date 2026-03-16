@@ -1,0 +1,19 @@
+#!/bin/bash
+# Re-apply the saved platform profile on AC change
+# Called by udev rule on power supply events
+
+SAVE_FILE="/tmp/thinkpad-profile-choice"
+
+# If no saved choice yet, save current and exit
+if [[ ! -f "$SAVE_FILE" ]]; then
+    cat /sys/firmware/acpi/platform_profile > "$SAVE_FILE"
+    exit 0
+fi
+
+DESIRED=$(cat "$SAVE_FILE")
+CURRENT=$(cat /sys/firmware/acpi/platform_profile)
+
+if [[ "$CURRENT" != "$DESIRED" ]]; then
+    echo "$DESIRED" > /sys/firmware/acpi/platform_profile
+    sudo -u orestes DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus pkill -RTMIN+1 waybar
+fi

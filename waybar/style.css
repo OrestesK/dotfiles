@@ -1,6 +1,6 @@
 * {
   font-size: 11px;
-  font-family: Iosevka;
+  font-family: Iosevka Nerd Font, Iosevka;
 }
 
 window#waybar {
@@ -25,7 +25,7 @@ window#waybar {
 #network,
 #memory,
 #cpu,
-#battery,
+#custom-battery-profile,
 #disk,
 #backlight,
 #tray {
@@ -52,7 +52,7 @@ window#waybar {
 #cpu {
   color: #6c71c4;
 }
-#battery {
+#custom-battery-profile {
   color: #859900;
 }
 #disk {
@@ -67,8 +67,9 @@ window#waybar {
 #network,
 #memory,
 #cpu,
-#battery,
-#disk {
+#custom-battery-profile,
+#disk,
+#custom-platform-profile {
 	padding: 0 10px;
 }
 #backlight {

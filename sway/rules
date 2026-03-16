@@ -1,9 +1,9 @@
 for_window [class="^.*"] border pixel 0
-for_window [class="^launcher$"] {
+for_window [app_id="^launcher$"] {
     floating enable
     sticky enable
     resize set 30 ppt 60 ppt
-    border pixel 3 
+    border pixel 3
 }
 
 for_window [app_id="qalculate-gtk"] floating enable
@@ -16,13 +16,13 @@ for_window [class="^.*"] inhibit_idle fullscreen
 
 output HDMI-A-1 {
     mode 2560x1440@144Hz
-    scale 1.4
+    scale 1.5
     pos 0 0
 }
 
 output eDP-1 {
 	scale 1
-	pos 0 1030
+	pos 0 960
 }
 workspace 1 output HDMI-A-1
 workspace 2 output HDMI-A-1

@@ -1,17 +1,14 @@
-# set time & low power mode
-exec /usr/local/bin/startupScript.sh
-
 exec mako
 exec xmousepasteblock
 exec wl-paste --watch cliphist store
 
-exec swayidle -w \
-         timeout 600 '/usr/local/bin/lock.sh' \
-         timeout 50 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
-         resume 'swaymsg "output * dpms on"' \
-         before-sleep '/usr/local/bin/lock.sh'
+#exec swayidle -w \
+#         timeout 600 '/usr/local/bin/lock.sh' \
+#         timeout 50 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+#         resume 'swaymsg "output * dpms on"' \
+#         before-sleep '/usr/local/bin/lock.sh'
 
-exec nohup kdeconnect-indicator &
+# exec nohup kdeconnect-indicator &
 
 # environment variables
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
@@ -19,4 +16,4 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 
 # to make idea products work
-exec wmname LG3D # TODO: fix
+#exec wmname LG3D # TODO: fix

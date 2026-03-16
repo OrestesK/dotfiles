@@ -1,0 +1,2 @@
+# Prevent firmware from resetting platform profile on AC plug/unplug
+SUBSYSTEM=="power_supply", ATTR{type}=="Mains", RUN+="/usr/local/bin/thinkpad-profile-hold"
