@@ -1,0 +1,12 @@
+[Unit]
+Description=Sync ThinkPad mute LED with PipeWire
+After=pipewire-pulse.service
+Requires=pipewire-pulse.service
+
+[Service]
+ExecStart=%h/.local/bin/mute-led-sync
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

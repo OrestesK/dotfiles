@@ -1,0 +1,12 @@
+[Unit]
+Description=Watch ThinkPad Fn key profile changes and sync TLP
+After=tlp.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/thinkpad-profile-watch
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

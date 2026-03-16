@@ -21,6 +21,16 @@ ln -sf ~/.config/scripts/waybar-battery-profile ~/.local/bin/waybar-battery-prof
 
 # lock (root-owned target)
 sudo ln -sf ~/.config/scripts/lock.sh /usr/local/bin/lock.sh
+
+# makepkg config
+ln -sf ~/.config/scripts/makepkg.conf ~/.makepkg.conf
+```
+
+Enable systemd user services:
+
+```bash
+systemctl --user enable --now mute-led-sync.service
+systemctl --user enable --now thinkpad-profile-watch.service
 ```
 
 ### Dependencies
@@ -35,13 +45,14 @@ sudo ln -sf ~/.config/scripts/lock.sh /usr/local/bin/lock.sh
 Scripts and udev rules for ThinkPad power profile management. Prevents firmware from resetting the platform profile on AC plug/unplug and syncs Fn+L/M/H profile changes with TLP.
 
 - **thinkpad-profile-hold** — re-applies saved profile on AC events (triggered by udev)
-- **thinkpad-profile-watch** — watches for Fn key profile changes, syncs TLP and waybar (run from sway config)
+- **thinkpad-profile-watch** — watches for Fn key profile changes, syncs TLP and waybar (systemd user service)
 - **99-thinkpad-profile.rules** — udev rule firing `thinkpad-profile-hold` on power supply events
 - **99-thinkpad-mute-led.rules** — udev rule exposing mute LED to userspace control
 
-## Top-level scripts
+## Top-level
 
 - **lock.sh** — swaylock with blur and gruvbox colors
-- **mute-led-sync** — syncs ThinkPad mute LED with PipeWire mute state (run from sway config)
+- **mute-led-sync** — syncs ThinkPad mute LED with PipeWire mute state (systemd user service)
 - **screen-record** — toggle screen recording with wf-recorder, saves to `~/Recordings` and copies to clipboard
 - **waybar-battery-profile** — waybar custom module showing battery %, charge time, and current power profile [L/M/H]
+- **makepkg.conf** — Arch package build config (parallel compilation, tmpfs build dir, zstd multithreading)

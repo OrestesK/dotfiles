@@ -1,0 +1,6 @@
+{
+  "cleanafter": true,
+  "removemake": "yes",
+  "provides": false,
+  "batchinstall": true
+}

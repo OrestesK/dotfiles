@@ -1,0 +1,9 @@
+gui:
+  nerdFontsVersion: ""
+  showCommandLog: false
+git:
+  pagers:
+    - pager: delta --dark --paging=never
+  skipHookPrefix: "WIP"
+os:
+  editPreset: nvim

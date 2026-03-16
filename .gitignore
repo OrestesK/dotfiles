@@ -1,19 +1,34 @@
 # Ignore everything
 *
 
-# But
+# Configs
 !.gitignore
-!easyeffects/
+!foot/
+!foot/**
+!hyprvoice/
+!hyprvoice/**
+!lazygit/
+!lazygit/**
 !lf/
 !mako/
 !mpv/
-!wlogout/
 !sway/
 !waybar/
-!wezterm/
+!wlogout/
+!yay/
+!yay/**
 !zsh/
-!README/
+
+# Scripts and services
 !scripts/
 !scripts/**
-!tweaks.md
+!systemd/
+!systemd/user/
+!systemd/user/mute-led-sync.service
+!systemd/user/thinkpad-profile-watch.service
+systemd/user/*/
+
+# Docs
+!README/
 !README.md
+!tweaks.md
