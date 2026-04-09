@@ -1,5 +1,6 @@
 gui:
   nerdFontsVersion: ""
+  showIcons: false
   showCommandLog: false
 git:
   pagers:

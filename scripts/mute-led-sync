@@ -4,7 +4,7 @@
 LED=/sys/class/leds/platform::mute/brightness
 
 sync_led() {
-    pactl get-sink-mute @DEFAULT_SINK@ 2>/dev/null | grep -q 'yes' && echo 1 > "$LED" || echo 0 > "$LED"
+    pactl get-sink-mute @DEFAULT_SINK@ 2>/dev/null | grep -q 'yes' && echo 1 | sudo tee "$LED" > /dev/null || echo 0 | sudo tee "$LED" > /dev/null
 }
 
 sync_led
